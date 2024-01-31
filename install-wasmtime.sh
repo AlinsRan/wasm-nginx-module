@@ -40,6 +40,9 @@ if { echo "int main(void) {}" | gcc -o /dev/null -v -x c - &> /dev/stdout| grep 
         source "$HOME/.cargo/env"
     fi
 
+    rustup install 1.69
+    rustup default 1.69
+
     git clone https://github.com/bytecodealliance/wasmtime -b ${VER} --depth 1 \
         && cd wasmtime \
         && git submodule update --init \
